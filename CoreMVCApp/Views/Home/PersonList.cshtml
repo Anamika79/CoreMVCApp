@@ -1,0 +1,30 @@
+﻿@model List<Person>
+
+<h1>Person List</h1>
+
+
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>State</td>
+            <td>Action</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Mobile</td>
+                <td>@item.State</td>
+                <td>
+                    <a asp-controller="Home" asp-action="PersonDelete" asp-route-id="@item.ID" class="link-danger">Delete</a>
+                    <a asp-controller="Home" asp-action="Person" asp-route-id="@item.ID" class="link-success">Edit</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

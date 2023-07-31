@@ -1,0 +1,45 @@
+﻿@model Person
+
+<div class="row">
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Person @(Model?.ID>0?"Update" : "Save")</h3>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Home" asp-action="PersonSave" method="post">
+                    <input type="hidden" asp-for=ID />
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input asp-for=Name type="text" placeholder="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="form-label">Mobile</label>
+                        <input asp-for=Mobile type="text" placeholder="Mobile" class="form-control" />
+                        <span asp-validation-for="Mobile" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <select name="State" class="form-control" asp-for="State" asp-items="@ViewBag.States"></select>
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+
+                    <br />
+                    <div class="mb-3">
+                        <input class="btn btn-primary" type="submit" value="@(Model?.ID>0?"Update" : "Save")" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="card-footer">
+                <p>Add and Edit Person List</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

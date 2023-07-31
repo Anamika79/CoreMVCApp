@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome .Net 6</h1>
+    <h5>Total Persons: @ViewBag.PersonCount</h5>
+    <a class="btn btn-success" asp-controller="Home" asp-action="Person">Add Person</a>&nbsp
+       <a class="btn btn-warning" asp-controller="Home" asp-action="PersonList">Person List</a>
+</div>
