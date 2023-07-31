@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CoreMVCApp.Models
 {
-    //Demo
     public class Person
     {
         public int ID { get; set; }
